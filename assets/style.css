@@ -28,7 +28,7 @@ questions, submit {
 }
 
 score, timer, button {
-    font-size: 2em;
+    font-size: 1.5em;
     text-shadow: gray 1px 1px;
 }
 
@@ -57,4 +57,22 @@ content {
 .bulk {
     justify-content: left;
     order: 2;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: gray 1px 1px;
+
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.mainQuestion {
+    font-size: 2em;
+}
+
+null {
+    display: none;
 }

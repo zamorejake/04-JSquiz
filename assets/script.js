@@ -1,11 +1,11 @@
 let timer = document.getElementById("timer");
-let score = document.getElementById("score");
-let quiz = document.getElementById("quiz");
+let scoreContent = document.getElementById("score");
+let questionsContent = document.getElementsByClassName("bulk");
+let submitButton = document.getElementById("submitButton");
+let questionContainer = document.getElementById("questionContainer");
 countDown();
-
+let time = 60;
 function countDown() {
-    let time = 60;
-
     let count = setInterval(function () {
         time--;
         timer.textContent = "Time: " + time + " seconds left";
@@ -15,13 +15,6 @@ function countDown() {
         }
     }, 1000);
 }
-/*submitButton.addEventListener("click", question);
-function highScore() {
-
-
-}*/
-
-
     const sample = {
         question: "Q1",
         answer: "1",
@@ -53,7 +46,7 @@ function highScore() {
         c: "15",
         d: "16"
     };
-
+    function question() {
     var setQ = sample.question;
     var setAns = sample.answer;
     var setB = sample.b;
@@ -61,7 +54,7 @@ function highScore() {
     var setD = sample.d;
 
     let mainQuestion = document.getElementById("mainQuestion");
-    mainQuestion.append(setQ);
+    mainQuestion.append("Question: " + setQ);
 
     let mainAns = document.getElementById("mainAns");
     mainAns.append(setAns);
@@ -75,15 +68,69 @@ function highScore() {
     let mainD = document.getElementById("mainD");
     mainD.append(setD);
     mainD.style.order = Math.floor(Math.random() * 4);
+    }
+    mainAns.addEventListener("click", question);
+    mainB.addEventListener("click", question);
+    mainC.addEventListener("click", question);
+    mainD.addEventListener("click", question);
+    questionsContent[0].addEventListener('click', incrementScore);
+    questionsContent[1].addEventListener('click', decScore);
+    questionsContent[2].addEventListener('click', decScore);
+    questionsContent[3].addEventListener('click', decScore);
+    let score = 0;
+    let round = 0;
+    const scoreMax = 4;
+
+
+    function incrementScore() {
+        score += 1;
+        time += 5;
+        console.log(score); 
+        reset();
+        question();
+
+        if (score === 4) {
+            gameOver();
+        } else {
+            console.log('test');
+        }
+    }
+
+    function decScore() {
+        round += 1;
+        time -= 10;
+        console.log(score);
+        reset();
+        question();
+        if (round === 4) {
+            gameOver();
+        } else {
+            console.log('test');
+        }
+    }
+
     
-/*function question() {
-    let example = [sample, sample2, sample3, sample4];
-    let qBank = example.splice(Math.floor(Math.random() * example.length),1);
-    console.log(qBank);
-    console.log(example);
-} */
 
 function scoring() {
-    let score = 0;
+    
 
 }
+
+function highScore() {
+
+    console.log("this works");
+}
+
+function reset() {
+    mainQuestion.innerHTML = '';
+    mainAns.innerHTML = '';
+    mainB.innerHTML = '';
+    mainC.innerHTML = '';
+    mainD.innerHTML = '';
+}
+
+function gameOver() {
+    questionContainer.innerHTML = "<questions style='font-size: 4em'> Game over!</br></questions>" + score;
+}
+
+question();
