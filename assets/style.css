@@ -20,22 +20,41 @@ body {
     justify-content: space-between;
 }
 
-score, timer {
+questions, submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+score, timer, button {
     font-size: 2em;
     text-shadow: gray 1px 1px;
 }
 
+.submitButton {
+    border-radius: 10px;
+}
+
 content {
-    padding-top: 2.5em;
-    align-items: center;
-    font-size: 2em;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+    padding-top: 2.5em;
+    font-size: 2em;
+    height: 1.5em;
+    width: 20em;
     
 }
 
 .quiz {
     border: 3px solid black;
     padding: 1.5em;
+    border-radius: 25px;
+}
+
+.bulk {
+    justify-content: left;
+    order: 2;
 }
