@@ -25,6 +25,8 @@ questions, submit {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 1.5em;
+    text-shadow: gray 1px 1px;
 }
 
 score, timer, button {
@@ -36,7 +38,7 @@ score, timer, button {
     border-radius: 10px;
 }
 
-content {
+content{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,6 +75,22 @@ h2 {
     font-size: 2em;
 }
 
-null {
-    display: none;
+final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-shadow: gray .05em .05em;
+    font-size: 8em;
+}
+
+entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    padding: 1.5em;
+    border-radius: 25px;
 }
