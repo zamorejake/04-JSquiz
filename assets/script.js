@@ -18,75 +18,75 @@ function countDown() {
         }
     }, 1000);
 }
-    const sample = {
-        question: "Q1",
-        answer: "1",
-        b: "2",
-        c: "3",
-        d: "4"
+    const question1 = {
+        question: "How do you link a JavaScript file in HTML?",
+        answer: "<script>",
+        b: "<scripts>",
+        c: "<tag>",
+        d: "<link>"
     };
 
-    const sample2 = {
-        question: "Q2",
-        answer: "5",
-        b: "6",
-        c: "7",
-        d: "8"
+    const question2 = {
+        question: "How do you declare a constant variable in JavaScript?",
+        answer: "const",
+        b: "let",
+        c: "var",
+        d: "function"
     };
 
-    const sample3 = {
-        question: "Q3",
-        answer: "9",
-        b: "10",
-        c: "11",
-        d: "12"
+    const question3 = {
+        question: "Which method in JavaScript remove the first element of an array and returns it?",
+        answer: ".shift",
+        b: ".pop",
+        c: ".cut",
+        d: ".push"
     };
 
-    const sample4 = {
-        question: "Q4",
-        answer: "13",
-        b: "14",
-        c: "15",
-        d: "16"
+    const question4 = {
+        question: "How would you change something into a string to store it in local storage?",
+        answer: "JSON.stringify()",
+        b: "JSON.parse()",
+        c: "JSON.text()",
+        d: "JSON.word()"
     };
 
-    const sample5 = {
-        question: "Q4",
-        answer: "13",
-        b: "14",
-        c: "15",
-        d: "16"
+    const question5 = {
+        question: "How would you get rid of something from the DOM?",
+        answer: ".remove()",
+        b: ".purge()",
+        c: ".trash()",
+        d: ".flip()"
     };
 
-    const sample6 = {
-        question: "Q4",
-        answer: "13",
-        b: "14",
-        c: "15",
-        d: "16"
+    const question6 = {
+        question: "What type of programming language is JavaScript?",
+        answer: "Object Oriented",
+        b: "Object Grounded",
+        c: "Object Fixed",
+        d: "Object Based"
     };
 
-    const sample7 = {
-        question: "Q4",
-        answer: "13",
-        b: "14",
-        c: "15",
-        d: "16"
+    const question7 = {
+        question: "Which symbol means negative/not in JavaScript?",
+        answer: "!",
+        b: "?",
+        c: "&",
+        d: "#"
     };
 
-    const sample8 = {
-        question: "Q8",
-        answer: "13",
-        b: "14",
-        c: "15",
-        d: "16"
+    const question8 = {
+        question: "What does Math.floor do in JavaScript?",
+        answer: "Rounds down and returns the largest number",
+        b: "Rounds up and returns the largest number",
+        c: "Rounds down and returns the smallest number",
+        d: "Rounds up and returns the smallest number"
     };
     let score = 0;
     let round = 0;
     const scoreMax = 8;
     
     function question() {
-        let qBank = [sample, sample2, sample3, sample4, sample5, sample6, sample7, sample8];
+        let qBank = [question1, question2, question3, question4, question5, question6, question7, question8];
     for (var i = 0; i <= round; i++) {
         qBank2 = qBank.shift();
     }
