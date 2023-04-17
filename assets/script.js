@@ -36,10 +36,10 @@ function countDown() {
 
     const question3 = {
         question: "Which method in JavaScript remove the first element of an array and returns it?",
-        answer: ".shift",
-        b: ".pop",
-        c: ".cut",
-        d: ".push"
+        answer: ".shift()",
+        b: ".pop()",
+        c: ".cut()",
+        d: ".push()"
     };
 
     const question4 = {
@@ -86,19 +86,19 @@ function countDown() {
     const scoreMax = 8;
     
     function question() {
-        let qBank = [question1, question2, question3, question4, question5, question6, question7, question8];
+        let mainQBank = [question1, question2, question3, question4, question5, question6, question7, question8];
     for (var i = 0; i <= round; i++) {
-        qBank2 = qBank.shift();
+        qBank = mainQBank.shift();
     }
 if (i > scoreMax) {
     gameOver();
 } else {console.log("");}
 
-    var setQ = qBank2.question;
-    var setAns = qBank2.answer;
-    var setB = qBank2.b;
-    var setC = qBank2.c;
-    var setD = qBank2.d;
+    var setQ = qBank.question;
+    var setAns = qBank.answer;
+    var setB = qBank.b;
+    var setC = qBank.c;
+    var setD = qBank.d;
 
     let mainQuestion = document.getElementById("mainQuestion");
     mainQuestion.append("Question: " + setQ);
@@ -179,7 +179,7 @@ function gameOver() {
 
 function getUsername() {
     let finalScore = score + "/" + scoreMax;
-    let username = prompt("Times up!\nPlease enter your name to save your score!");
+    let username = prompt("The quiz is over!\nPlease enter your name to save your score!");
     if (username == null) {
         alert("Name cannot be empty, please try again.")
         getUsername();
