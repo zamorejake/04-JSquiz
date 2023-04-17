@@ -11,7 +11,6 @@ body {
     font-family: Georgia, Times, 'Times New Roman', serif;
     padding-top: 0;
     margin-top: 0;
-
 }
 
 .heading {
@@ -20,22 +19,86 @@ body {
     justify-content: space-between;
 }
 
-score, timer {
-    font-size: 2em;
+questions, submit, entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
     text-shadow: gray 1px 1px;
 }
 
-content {
-    padding-top: 2.5em;
-    align-items: center;
-    font-size: 2em;
+score, timer, button {
+    font-size: 1.5em;
+    text-shadow: gray 1px 1px;
+}
+
+.submitButton {
+    border-radius: 10px;
+}
+
+content{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+    padding-top: 2.5em;
+    font-size: 2em;
+    height: 1.5em;
+    width: 20em;
     
 }
 
 .quiz {
     border: 3px solid black;
     padding: 1.5em;
+    border-radius: 25px;
 }
+
+.bulk {
+    justify-content: left;
+    order: 2;
+}
+
+h1 {
+    font-size: 3.5em;
+    text-shadow: gray 1px 1px;
+
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.mainQuestion {
+    font-size: 2em;
+}
+
+final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-shadow: gray .05em .05em;
+    font-size: 8em;
+}
+lists, mainTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+mainScores {
+    font-size: 2em;
+    padding: 1.5em;
+    border-radius: 25px;
+    height: 1.5em;
+    width: 20em;
+}
+
+entry {
+    color: black;
+    text-shadow: gray .05em .05em;
+}
+
