@@ -4,7 +4,7 @@
 In this project I had to create a Java Script quiz from scratch. I had to use my increased knowledge of the DOM to navigate and finish this project along with better use of CSS.
 
 ## Visuals
-![Picture of landing page](https://github.com/zamorejake/03-passwordGenerator/blob/main/04-JSquiz/assets/photos/demoSMALLER.png)
+![Picture of landing page](https://github.com/zamorejake/04-JSquiz/blob/main/assets/photos/demoSMALLER.png)
 
 ## Usage/Link
 This project will present a series of questions related to JavaScript and randomize the options presented on screen. After the time runs out or all of the questions are answered the name and score is saved to local storage to form a high score board.
