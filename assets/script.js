@@ -4,9 +4,9 @@ let questionsContent = document.getElementsByClassName("bulk");
 let submitButton = document.getElementById("submitButton");
 let questionContainer = document.getElementById("questionContainer");
 let finalContainer = document.getElementById("finalContainer");
-let entryContainer = document.getElementById("entry");
+let finalContainerMsg = document.getElementById("finalContainerMsg");
 countDown();
-let time = 6;
+let time = 60;
 function countDown() {
     let count = setInterval(function () {
         time--;
@@ -159,12 +159,6 @@ if (i > scoreMax) {
         }
     }
 
-
-function highScore() {
-
-    console.log("this works");
-}
-
 function reset() {
     mainQuestion.innerHTML = '';
     mainAns.innerHTML = '';
@@ -172,25 +166,54 @@ function reset() {
     mainC.innerHTML = '';
     mainD.innerHTML = '';
 }
-
 function gameOver() {
+    time = 0;
     timer.remove();
     questionContainer.remove();
     let finalScoreMsg = score + "/" + scoreMax + "!";
-    let finalScore = score + "/" + scoreMax;
     finalContainer.innerHTML = finalScoreMsg;
+    finalContainerMsg.innerHTML = "Check the highscore board to see how you did!";
     getUsername();
+    scores();
 }
 
 function getUsername() {
-    let username = prompt("Please enter your name to save your score!");
-    if (username != "" || null) {
-        localStorage.setItem("name", username);
-        localStorage.setItem("score", finalScore);
-    } else {
+    let finalScore = score + "/" + scoreMax;
+    let username = prompt("Times up!\nPlease enter your name to save your score!");
+    if (username == null) {
         alert("Name cannot be empty, please try again.")
-        gameOver();
-    }
+        getUsername();
+    } else if (username === ""){
+        alert("Name cannot be empty, please try again.")
+        getUsername();
+    } else {
+        localStorage.setItem("username", JSON.stringify(username));
+        localStorage.setItem("score", JSON.stringify(finalScore));
+        console.log(finalScore);
+    } 
 }
+
+function scores() {
+    let mainName = JSON.parse(localStorage.getItem("username"));
+    let topScore = JSON.parse(localStorage.getItem("score"));
+    let combo = "Name: " + mainName + "</br>" + "Score: " + topScore + "</br>" + "</br>";
+    let currentScoreList = JSON.parse(localStorage.getItem("scoreList"));
+    if (currentScoreList) {
+        currentScoreList.push(combo);
+        localStorage.setItem("scoreList", JSON.stringify(currentScoreList));
+    } else {
+        let newScoreList = [];
+        newScoreList.push(combo);
+        localStorage.setItem("scoreList", JSON.stringify(newScoreList));
+    }
+    }
+
+    function loadScores() {
+        let finalScoreList = JSON.parse(localStorage.getItem("scoreList"));
+        let noCommaScoreList = finalScoreList.join('');
+        let container = document.createElement('entry');
+        container.innerHTML = (noCommaScoreList);
+        document.getElementById("entry").appendChild(container);
+    }
 
 question();

@@ -11,7 +11,6 @@ body {
     font-family: Georgia, Times, 'Times New Roman', serif;
     padding-top: 0;
     margin-top: 0;
-
 }
 
 .heading {
@@ -20,7 +19,7 @@ body {
     justify-content: space-between;
 }
 
-questions, submit {
+questions, submit, entry {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +61,7 @@ content{
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     text-shadow: gray 1px 1px;
 
 }
@@ -84,13 +83,22 @@ final {
     text-shadow: gray .05em .05em;
     font-size: 8em;
 }
-
-entry {
+lists, mainTitle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid black;
+}
+mainScores {
+    font-size: 2em;
     padding: 1.5em;
     border-radius: 25px;
+    height: 1.5em;
+    width: 20em;
 }
+
+entry {
+    color: black;
+    text-shadow: gray .05em .05em;
+}
+
